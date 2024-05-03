@@ -1,0 +1,10 @@
+{ 
+    "APERO": 
+    {
+        "WELCOME":"Bienvenue à l'Apero League"
+    },
+    "CYCLO":
+    {
+        "WELCOME": "A l’image des Cyclosportives IRL, nous vous proposons de participer tous les Dimanche matin à une Cyclo sur Zwift, d’une durée de 2h et 75km environ, avec classement.\n        Lors de ces cours, nous arpenterons des parcours divers et variés, régulièrement vallonnés.\n        Tous les coureurs s'inscrivent sur la catégorie unique E et partent ensemble, des groupes de niveau vont probablement se créer lors des différentes difficultés du parcours.\n        Seul un classement scratch sera effectué pour chaque catégorie : Pas de bonus FAL/FTS ni de classement par catégorie de niveau ou d’âge.\n        Les Power-Ups sont activés."
+    }
+}

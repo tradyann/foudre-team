@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"
+    style="background: linear-gradient(172deg,#172940 -40%,#1fa5ff 40%,#1fc0ff 40%,#267899 190%);">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/']">Foudre logo</a>
+        <!-- Toggle button -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            (click)="rightAligned.toggle()"
+            aria-controls="navbarRightAlignExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+        <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div
+            class="collapse navbar-collapse"
+            id="navbarRightAlignExample"
+            mdbCollapse
+            #rightAligned="mdbCollapse"
+        >
+        <!-- Left links -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link text-white" [routerLink]="'cyclo'">Cyclo Foudre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" [routerLink]="'apero'">Apero League</a>
+            </li>
+        </ul>
+
+        <!-- Left links -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item" (click)="toggleSkin()">
+                <a class="nav-link pointer">
+                    <span *ngIf="darkMode===''">Dark <i class="fas fa-sun"></i></span>
+                    <span *ngIf="darkMode==='dark'">Light <i class="far fa-sun"></i></span>
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link dropdown-toggle pointer" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <i [ngClass]="'flag flag-france'"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li *ngFor="let lang of langues" (click)="setLanguage(lang.value)" class="dropdown-item">
+                        {{ lang.label }}
+                    </li>
+                </ul>
+            </li> -->
+            <li class="nav-item">
+                <ul mdbDropdown class="dropdown">
+                    <a
+                        class="btn dropdown-toggle"
+                        role="button"
+                        id="dropdownMenuLink"
+                        mdbDropdownToggle
+                        aria-expanded="false"
+                    >
+                        <i class="flag flag-{{countryFlag}}" *ngIf="countryFlag"></i>
+                    </a>
+                    <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li class="nav-item"><a class="dropdown-item nav-link pointer" (click)="setLanguage('en')"><i class="flag flag-us"></i></a></li>
+                        <li class="nav-item"><a class="dropdown-item nav-link pointer" (click)="setLanguage('fr')"><i class="flag flag-fr"></i></a></li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+        <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+    </div>
+</nav>

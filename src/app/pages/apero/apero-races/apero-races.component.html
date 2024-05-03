@@ -1,0 +1,109 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="text-muted" [routerLink]="['/apero']">Presentation</a></li>
+            <li class="breadcrumb-item"><a class="text-muted" [routerLink]="['/apero/races']">Races history</a></li>
+        </ol>
+    </nav>
+
+
+    <h1 class="text-dark fw-bold mb-2">Foudre Friday Apero League Race</h1>
+    <div class="lead mb-4">
+        <b>{{selectedRace.description}}</b>
+        <div class="small text-muted">
+            <span class="pe-3">{{selectedRace.route}}</span>
+            <i class="far fa-clock pe-1"></i>{{selectedRace.start}} <i class="fas fa-route ps-3"></i> {{selectedRace.distance}}
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col">
+            <mdb-form-control>
+            <input mdbInput type="text" id="form1" class="form-control" [(ngModel)]="searchString" />
+            <label mdbLabel class="form-label" for="form1">Search</label>
+            </mdb-form-control>
+        </div>
+        <div class="col">
+            <mdb-form-control>
+            <mdb-select [(ngModel)]="catSearch">
+                <mdb-option *ngFor="let option of options" [value]="option.value">{{
+                option.label
+                }}</mdb-option>
+            </mdb-select>
+            <label mdbLabel class="form-label">Categories</label>
+            </mdb-form-control>
+        </div>
+        <div class="col">
+            <mdb-form-control>
+                <mdb-select [(ngModel)]="selectedRaceId" (ngModelChange)="onRaceChange($event)">
+                    <mdb-option *ngFor="let race of races" [value]="race.id">
+                    {{ race.name }}
+                    </mdb-option>
+                </mdb-select>
+                <label mdbLabel class="form-label">Races</label>
+            </mdb-form-control>
+        </div>
+    </div>
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Cat.</th>
+                <th>#</th>
+                <th>Rider</th>
+                <th>Time</th>
+                <th>Gap</th>
+                <th>Primes</th>
+                <th>Age</th>
+                <th>Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of jsonData.data | filterBy: myCatFilter: catSearch | filterBy: myFilter: searchString">
+                <td>
+                    <button type="button" class="btn btn-rounded btn-sm" [ngClass]="{
+                        'btn-dark': item.category === 'A' && item.div <= 5,
+                        'btn-danger': item.category === 'A' && item.div > 5,
+                        'btn-success': item.category === 'B',
+                        'btn-primary': item.category === 'C',
+                        'btn-warning': item.category === 'D',
+                        'btn-light': item.category === 'E'
+                        }" mdbRipple>{{ item.category }}
+                    </button>
+
+                    <span class="badge badge-dark" *ngIf="item.div===5">A</span>
+                    <span class="badge badge-danger" *ngIf="item.div===10">A</span>
+                    <span class="badge badge-success" *ngIf="item.div===20">B</span>
+                    <span class="badge badge-primary" *ngIf="item.div===30">C</span>
+                    <span class="badge badge-warning" *ngIf="item.div===40">D</span>
+                    <span class="badge badge-light" *ngIf="item.div===50">E</span>          
+                </td>
+                <td>
+                    <span [ngClass]="{
+                    'gold': item.position_in_cat === 1,
+                    'silver': item.position_in_cat === 2,
+                    'bronze': item.position_in_cat === 3
+                    }">
+                    <span *ngIf="item.position_in_cat > 3">{{ item.position_in_cat }}</span>
+                    <i *ngIf="item.position_in_cat <= 3" class="fas fa-trophy"></i>
+                    </span>
+                </td>
+                <td>
+                    <i [ngClass]="'flag flag-' + item.flag.toLowerCase()"></i>
+                    <span class="fw-bold" [innerHTML]="item.name"></span>
+                    <i *ngIf="!item.male" class="fas fa-venus text-success ps-1"></i>
+                </td>
+                <td>
+                    {{ getTimeFormatted(item.time[0]) }}
+                </td>
+                <td><span *ngIf="item.gap>0">+{{ getTimeFormatted(item.gap) }}</span></td>
+                <td>{{item.pts}}</td>
+                <td>{{ item.age }}</td>
+                <td [innerHTML]="item.tname"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+
+</div>

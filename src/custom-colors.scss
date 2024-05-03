@@ -1,0 +1,20 @@
+$third: #8f11d8 !default; //B8336A  C94277
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  'third': $third,
+) !default;
+// scss-docs-end theme-colors-map
+
+// scss-docs-start note-colors-map
+$note: () !default;
+$note: map-merge(
+    (
+        'third': (
+            'bgc': lighten($third, 33%),
+            'border-color': $third,
+        ),
+    ),
+    $note
+);
+// scss-docs-end note-colors-map
