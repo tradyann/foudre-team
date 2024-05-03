@@ -7,8 +7,16 @@ import { MainLayoutComponent } from './shell/layouts/main-layout/main-layout.com
 import { AperoPresentationComponent } from './pages/apero/apero-presentation/apero-presentation.component';
 import { AperoRacesComponent } from './pages/apero/apero-races/apero-races.component';
 import { CycloPresentationComponent } from './pages/cyclo/cyclo-presentation/cyclo-presentation.component';
+import { HomeLayoutComponent } from './shell/layouts/home-layout/home-layout.component';
 
 const routes: Routes = [
+  {
+    path : '' , 
+    component: HomeLayoutComponent,
+    children: [
+      { path: '', component: HomeComponent },
+    ]
+  },
   {
     path : '' , 
     component: MainLayoutComponent,

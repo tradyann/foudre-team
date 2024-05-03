@@ -76,6 +76,7 @@ import { FourOhFourComponent } from './pages/four-oh-four/four-oh-four.component
 import { MainLayoutComponent } from './shell/layouts/main-layout/main-layout.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { MainNavbarComponent } from './shell/main-navbar/main-navbar.component';
+import { HomeLayoutComponent } from './shell/layouts/home-layout/home-layout.component';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -94,6 +95,7 @@ export function initializeTranslation(http: HttpClient, translate: TranslateServ
 @NgModule({
   declarations: [
     AppComponent,
+    HomeLayoutComponent,
     MainLayoutComponent,
     FourOhFourComponent,
     MainNavbarComponent,
