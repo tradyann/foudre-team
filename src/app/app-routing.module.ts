@@ -8,6 +8,7 @@ import { AperoPresentationComponent } from './pages/apero/apero-presentation/ape
 import { AperoRacesComponent } from './pages/apero/apero-races/apero-races.component';
 import { CycloPresentationComponent } from './pages/cyclo/cyclo-presentation/cyclo-presentation.component';
 import { HomeLayoutComponent } from './shell/layouts/home-layout/home-layout.component';
+import { HomeEventsComponent } from './pages/manager/home-events/home-events.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'apero', component: AperoPresentationComponent },
       { path: 'apero/races', component: AperoRacesComponent },
       { path: 'cyclo', component: CycloPresentationComponent },
+      { path: 'manager/home-events', component: HomeEventsComponent },
       { path: 'not-found', component: FourOhFourComponent },
     ]
   },
