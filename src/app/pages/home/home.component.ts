@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   slides = [
     {
       "src": "https://www.equipecofidis.com/medias/articles/desktop-cofidis-prolonge-son-engagement-jusqu-en-2028-picture-20240419090745.jpg",
-      "title": "Foudre Apero Races",
+      "title": "Foudre Apero Race",
       "desc": "Find more details about our competition here",
       "alt": "Foudre image desc",
       "btnLink": "http:\\google.com",
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     },
     {
       "src": "https://www.equipecofidis.com/medias/articles/desktop-giro-d-italia-2024-picture-20240430112821.png",
-      "title": "Join us now",
+      "title": "Foudre Cyclo",
       "desc": "Find more details about our competition here",
       "alt": "Foudre image desc",
       "btnLink": "http:\\google.com",
@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     },
     {
       "src": "https://www.equipecofidis.com/medias/articles/desktop-team-cofidis-les-ardennaises-et-le-doubs-pour-se-relancer-picture-20240412104158.jpg",
-      "title": "Join us now",
+      "title": "ZRL events",
       "desc": "Find more details about our competition here",
       "alt": "Foudre image desc",
       "btnLink": "http:\\google.com",
