@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MdbParallaxModule } from 'mdb-angular-parallax';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [TranslateModule, RouterLink, MdbCarouselModule, CommonModule],
+  imports: [TranslateModule, RouterLink, MdbCarouselModule, CommonModule, MdbParallaxModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })

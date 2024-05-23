@@ -23,6 +23,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "chart.js": "^3.1.1",
+    "jwt-decode": "^4.0.0",
     "mdb-angular-calendar": "file:mdb-angular-calendar-6.0.0.tgz",
     "mdb-angular-captcha": "file:mdb-angular-captcha-6.0.0.tgz",
     "mdb-angular-color-picker": "file:mdb-angular-color-picker-6.0.0.tgz",

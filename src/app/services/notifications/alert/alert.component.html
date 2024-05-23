@@ -1,0 +1,10 @@
+<div class="alert alert-dismissible fade show" [ngClass]="colorclass" role="alert">
+  <h4 class="alert-heading" *ngIf="title!==''">{{ title }}</h4>
+  <div [innerHtml]="text"></div>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="close()"
+  ></button>
+</div>

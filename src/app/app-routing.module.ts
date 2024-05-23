@@ -9,6 +9,9 @@ import { AperoRacesComponent } from './pages/apero/apero-races/apero-races.compo
 import { CycloPresentationComponent } from './pages/cyclo/cyclo-presentation/cyclo-presentation.component';
 import { HomeLayoutComponent } from './shell/layouts/home-layout/home-layout.component';
 import { HomeEventsComponent } from './pages/manager/home-events/home-events.component';
+import { LoginComponent } from './pages/manager/login/login.component';
+import { AuthGuard } from './services/guards/auth-guard.service';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -23,14 +26,15 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: '', component: HomeComponent },
+      { path: 'calendar', component: CalendarComponent },
       { path: 'apero', component: AperoPresentationComponent },
       { path: 'apero/races', component: AperoRacesComponent },
       { path: 'cyclo', component: CycloPresentationComponent },
-      { path: 'manager/home-events', component: HomeEventsComponent },
+      { path: 'manager', component: LoginComponent },
+      { path: 'manager/home-events', canActivate: [AuthGuard], component: HomeEventsComponent },
       { path: 'not-found', component: FourOhFourComponent },
     ]
   },
-  //{ path: 'heroes', component: HeroesComponent }
   { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
 ];
 

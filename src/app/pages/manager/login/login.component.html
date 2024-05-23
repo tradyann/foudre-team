@@ -1,0 +1,50 @@
+<div class="container-fluid">
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+    
+    <div class="text-start">
+    
+    
+    <form *ngIf="userForm" [formGroup]="userForm"  (ngSubmit)="onSubmitForm()">
+        <div class="row mb-4">
+        <div class="col">
+
+                <h1 class="fw-bold mb-5">Login</h1>
+
+                <mdb-form-control class="mb-4">
+                    <input mdbValidate mdbInput type="email" id="email" class="form-control form-control-lg" formControlName="email" />
+                    <label mdbLabel class="form-label" for="email">Email</label>
+                    <mdb-error *ngIf="email?.errors?.required && email?.touched" class="text-danger">
+                        Email is required.
+                    </mdb-error>
+                    <mdb-error *ngIf="email?.errors?.email && email?.touched" class="text-danger">
+                        Please enter a valid email address.
+                    </mdb-error>
+                </mdb-form-control>
+
+                <mdb-form-control class="mb-4">
+                    <input mdbValidate mdbInput type="password" id="password" class="form-control form-control-lg" formControlName="password" />
+                    <label mdbLabel class="form-label" for="password">password</label>
+                    <mdb-error *ngIf="password?.errors?.required && password?.touched" class="text-danger">
+                        Password is required.
+                    </mdb-error>
+                </mdb-form-control>
+
+
+                <button *ngIf="!wait" type="submit" class="btn btn-primary btn-rounded btn-lg">Login</button>
+                <button *ngIf="wait" class="btn btn-primary btn-rounded btn-lg">
+                    <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                    ></span>
+                    Please wait...
+                </button>
+
+        </div>
+        </div>
+    </form>
+
+
+    </div>
+</div>
+</div>

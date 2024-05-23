@@ -20,15 +20,12 @@
 @import 'mdb-angular-organization-chart/scss/organization-chart.scss';
 @import 'mdb-angular-treetable/scss/treetable.scss';
 
-// $mdb-theme-dark-background: $bgrey1;
-// $mdb-theme-dark-surface: $bgrey2;
 $my-theme-primary: $primary;
 $my-theme-secondary: $secondary;
 $my-dark-theme: mdb-dark-theme($my-theme-primary, $my-theme-secondary);
 
 .dark {
     @include mdb-theme($my-dark-theme);
-    //nav { background-color: $dark !important; }
 }
 
 .pointer { cursor: pointer; }
